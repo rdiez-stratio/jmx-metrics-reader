@@ -19,10 +19,10 @@ Configuration parameters:
 
 Example:
 - Write results to file:
-  * docker run -dit --name jmx -e PORT=9091 -e URL=10.200.0.58 qa.stratio.com/stratio/jmx-metrics-reader:0.1.0-SNAPSHOT
+  * docker run -dit --name jmx -e PORT=9091 -e URL=10.200.0.58 qa.stratio.com/stratio/jmx-metrics-reader:VERSION
 
 - Write results to influx:  
-  * docker run -dit --name jmx -e PORT=9091 -e URL=10.200.0.58 -e INFLUX_URL=10.200.0.60 -e INFLUX_DB=metrics -e INFLUX_USER= user -e INFLUX_PWD=password qa.stratio.com/stratio/jmx-metrics-reader:0.1.0-SNAPSHOT
+  * docker run -dit --name jmx -e PORT=9091 -e URL=10.200.0.58 -e INFLUX_URL=10.200.0.60 -e INFLUX_DB=metrics -e INFLUX_USER= user -e INFLUX_PWD=password qa.stratio.com/stratio/jmx-metrics-reader:VERSION
 
 - Provide jvm json:  
-  * docker run -dit --name jmx -v my_jvm_json_dir:/tmp -e PORT=9091 -e URL=10.200.0.58 -e PATH_TO_JVM_JSON=/tmp/my_jvm.json qa.stratio.com/stratio/jmx-metrics-reader:0.1.0-SNAPSHOT
+  * docker run -dit --name jmx -v my_jvm_json_dir:/tmp -e PORT=9091 -e URL=10.200.0.58 -e PATH_TO_JVM_JSON=/tmp/my_jvm.json qa.stratio.com/stratio/jmx-metrics-reader:VERSION

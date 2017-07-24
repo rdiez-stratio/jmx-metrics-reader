@@ -9,7 +9,7 @@
           "outputWriters": [
             {
               "@class" : "com.googlecode.jmxtrans.model.output.KeyOutWriter",
-              "outputFile" : "/tmp/jvm_memory.txt",
+              "outputFile" : "/results/jvm_memory.txt",
               "maxLogFileSize" : "10MB",
               "maxLogBackupFiles" : 200,
               "delimiter" : "\t",
@@ -27,7 +27,7 @@
           "outputWriters": [
             {
               "@class" : "com.googlecode.jmxtrans.model.output.KeyOutWriter",
-              "outputFile" : "/tmp/os.txt",
+              "outputFile" : "/results/os.txt",
               "maxLogFileSize" : "10MB",
               "maxLogBackupFiles" : 200,
               "delimiter" : "\t",
@@ -47,7 +47,7 @@
           "outputWriters": [
             {
               "@class" : "com.googlecode.jmxtrans.model.output.KeyOutWriter",
-              "outputFile" : "/tmp/under_replicated_partitions.txt",
+              "outputFile" : "/results/under_replicated_partitions.txt",
               "maxLogFileSize" : "10MB",
               "maxLogBackupFiles" : 200,
               "delimiter" : "\t",
@@ -64,7 +64,7 @@
           "outputWriters": [
             {
               "@class" : "com.googlecode.jmxtrans.model.output.KeyOutWriter",
-              "outputFile" : "/tmp/messages_in_per_sec.txt",
+              "outputFile" : "/results/messages_in_per_sec.txt",
               "maxLogFileSize" : "10MB",
               "maxLogBackupFiles" : 200,
               "delimiter" : "\t",
@@ -85,7 +85,7 @@
           "outputWriters": [
             {
               "@class" : "com.googlecode.jmxtrans.model.output.KeyOutWriter",
-              "outputFile" : "/tmp/messages_in_per_sec_per_topic.txt",
+              "outputFile" : "/results/messages_in_per_sec_per_topic.txt",
               "maxLogFileSize" : "10MB",
               "maxLogBackupFiles" : 200,
               "delimiter" : "\t",
@@ -106,7 +106,7 @@
           "outputWriters": [
             {
               "@class" : "com.googlecode.jmxtrans.model.output.KeyOutWriter",
-              "outputFile" : "/tmp/bytes_in_per_sec.txt",
+              "outputFile" : "/results/bytes_in_per_sec.txt",
               "maxLogFileSize" : "10MB",
               "maxLogBackupFiles" : 200,
               "delimiter" : "\t",
@@ -127,7 +127,7 @@
           "outputWriters": [
             {
               "@class" : "com.googlecode.jmxtrans.model.output.KeyOutWriter",
-              "outputFile" : "/tmp/bytes_in_per_sec_per_topic.txt",
+              "outputFile" : "/results/bytes_in_per_sec_per_topic.txt",
               "maxLogFileSize" : "10MB",
               "maxLogBackupFiles" : 200,
               "delimiter" : "\t",
@@ -148,7 +148,7 @@
           "outputWriters": [
             {
               "@class" : "com.googlecode.jmxtrans.model.output.KeyOutWriter",
-              "outputFile" : "/tmp/bytes_out_per_sec.txt",
+              "outputFile" : "/results/bytes_out_per_sec.txt",
               "maxLogFileSize" : "10MB",
               "maxLogBackupFiles" : 200,
               "delimiter" : "\t",
@@ -169,7 +169,7 @@
           "outputWriters": [
             {
               "@class" : "com.googlecode.jmxtrans.model.output.KeyOutWriter",
-              "outputFile" : "/tmp/bytes_out_per_sec_per_topic.txt",
+              "outputFile" : "/results/bytes_out_per_sec_per_topic.txt",
               "maxLogFileSize" : "10MB",
               "maxLogBackupFiles" : 200,
               "delimiter" : "\t",
@@ -190,7 +190,7 @@
           "outputWriters": [
             {
               "@class" : "com.googlecode.jmxtrans.model.output.KeyOutWriter",
-              "outputFile" : "/tmp/partition_count.txt",
+              "outputFile" : "/results/partition_count.txt",
               "maxLogFileSize" : "10MB",
               "maxLogBackupFiles" : 200,
               "delimiter" : "\t",
@@ -207,7 +207,7 @@
           "outputWriters": [
             {
               "@class" : "com.googlecode.jmxtrans.model.output.KeyOutWriter",
-              "outputFile" : "/tmp/leader_count.txt",
+              "outputFile" : "/results/leader_count.txt",
               "maxLogFileSize" : "10MB",
               "maxLogBackupFiles" : 200,
               "delimiter" : "\t",
@@ -224,7 +224,7 @@
           "outputWriters": [
             {
               "@class" : "com.googlecode.jmxtrans.model.output.KeyOutWriter",
-              "outputFile" : "/tmp/request_handler_avg_idle_percent.txt",
+              "outputFile" : "/results/request_handler_avg_idle_percent.txt",
               "maxLogFileSize" : "10MB",
               "maxLogBackupFiles" : 200,
               "delimiter" : "\t",
@@ -241,7 +241,7 @@
           "outputWriters": [
             {
               "@class" : "com.googlecode.jmxtrans.model.output.KeyOutWriter",
-              "outputFile" : "/tmp/offline_partitions_count.txt",
+              "outputFile" : "/results/offline_partitions_count.txt",
               "maxLogFileSize" : "10MB",
               "maxLogBackupFiles" : 200,
               "delimiter" : "\t",
@@ -258,7 +258,7 @@
           "outputWriters": [
             {
               "@class" : "com.googlecode.jmxtrans.model.output.KeyOutWriter",
-              "outputFile" : "/tmp/active_controller_count.txt",
+              "outputFile" : "/results/active_controller_count.txt",
               "maxLogFileSize" : "10MB",
               "maxLogBackupFiles" : 200,
               "delimiter" : "\t",
@@ -275,7 +275,7 @@
           "outputWriters": [
             {
               "@class" : "com.googlecode.jmxtrans.model.output.KeyOutWriter",
-              "outputFile" : "/tmp/leader_election_rate_and_time_ms.txt",
+              "outputFile" : "/results/leader_election_rate_and_time_ms.txt",
               "maxLogFileSize" : "10MB",
               "maxLogBackupFiles" : 200,
               "delimiter" : "\t",
@@ -292,7 +292,7 @@
           "outputWriters": [
             {
               "@class" : "com.googlecode.jmxtrans.model.output.KeyOutWriter",
-              "outputFile" : "/tmp/unclean_leader_elections_per_sec.txt",
+              "outputFile" : "/results/unclean_leader_elections_per_sec.txt",
               "maxLogFileSize" : "10MB",
               "maxLogBackupFiles" : 200,
               "delimiter" : "\t",
@@ -309,7 +309,7 @@
           "outputWriters": [
             {
               "@class" : "com.googlecode.jmxtrans.model.output.KeyOutWriter",
-              "outputFile" : "/tmp/produce_requests_per_sec.txt",
+              "outputFile" : "/results/produce_requests_per_sec.txt",
               "maxLogFileSize" : "10MB",
               "maxLogBackupFiles" : 200,
               "delimiter" : "\t",
@@ -330,7 +330,7 @@
           "outputWriters": [
             {
               "@class" : "com.googlecode.jmxtrans.model.output.KeyOutWriter",
-              "outputFile" : "/tmp/fetch_consumer_requests_per_sec.txt",
+              "outputFile" : "/results/fetch_consumer_requests_per_sec.txt",
               "maxLogFileSize" : "10MB",
               "maxLogBackupFiles" : 200,
               "delimiter" : "\t",
@@ -351,7 +351,7 @@
           "outputWriters": [
             {
               "@class" : "com.googlecode.jmxtrans.model.output.KeyOutWriter",
-              "outputFile" : "/tmp/fetch_follower_requests_per_sec.txt",
+              "outputFile" : "/results/fetch_follower_requests_per_sec.txt",
               "maxLogFileSize" : "10MB",
               "maxLogBackupFiles" : 200,
               "delimiter" : "\t",
@@ -372,7 +372,7 @@
           "outputWriters": [
             {
               "@class" : "com.googlecode.jmxtrans.model.output.KeyOutWriter",
-              "outputFile" : "/tmp/produce_total_time_ms.txt",
+              "outputFile" : "/results/produce_total_time_ms.txt",
               "maxLogFileSize" : "10MB",
               "maxLogBackupFiles" : 200,
               "delimiter" : "\t",
@@ -399,7 +399,7 @@
           "outputWriters": [
             {
               "@class" : "com.googlecode.jmxtrans.model.output.KeyOutWriter",
-              "outputFile" : "/tmp/fetch_consumer_total_time_ms.txt",
+              "outputFile" : "/results/fetch_consumer_total_time_ms.txt",
               "maxLogFileSize" : "10MB",
               "maxLogBackupFiles" : 200,
               "delimiter" : "\t",
@@ -426,7 +426,7 @@
           "outputWriters": [
             {
               "@class" : "com.googlecode.jmxtrans.model.output.KeyOutWriter",
-              "outputFile" : "/tmp/fetch_follower_total_time_ms.txt",
+              "outputFile" : "/results/fetch_follower_total_time_ms.txt",
               "maxLogFileSize" : "10MB",
               "maxLogBackupFiles" : 200,
               "delimiter" : "\t",
@@ -453,7 +453,7 @@
           "outputWriters": [
             {
               "@class" : "com.googlecode.jmxtrans.model.output.KeyOutWriter",
-              "outputFile" : "/tmp/fetch_follower_request_queue_time_ms.txt",
+              "outputFile" : "/results/fetch_follower_request_queue_time_ms.txt",
               "maxLogFileSize" : "10MB",
               "maxLogBackupFiles" : 200,
               "delimiter" : "\t",
@@ -480,7 +480,7 @@
           "outputWriters": [
             {
               "@class" : "com.googlecode.jmxtrans.model.output.KeyOutWriter",
-              "outputFile" : "/tmp/fetch_consumer_request_queue_time_ms.txt",
+              "outputFile" : "/results/fetch_consumer_request_queue_time_ms.txt",
               "maxLogFileSize" : "10MB",
               "maxLogBackupFiles" : 200,
               "delimiter" : "\t",
@@ -507,7 +507,7 @@
           "outputWriters": [
             {
               "@class" : "com.googlecode.jmxtrans.model.output.KeyOutWriter",
-              "outputFile" : "/tmp/produce_request_queue_time_ms.txt",
+              "outputFile" : "/results/produce_request_queue_time_ms.txt",
               "maxLogFileSize" : "10MB",
               "maxLogBackupFiles" : 200,
               "delimiter" : "\t",
@@ -534,7 +534,7 @@
           "outputWriters": [
             {
               "@class" : "com.googlecode.jmxtrans.model.output.KeyOutWriter",
-              "outputFile" : "/tmp/network_processor_avg_idle_percent.txt",
+              "outputFile" : "/results/network_processor_avg_idle_percent.txt",
               "maxLogFileSize" : "10MB",
               "maxLogBackupFiles" : 200,
               "delimiter" : "\t",
@@ -551,7 +551,7 @@
           "outputWriters": [
             {
               "@class" : "com.googlecode.jmxtrans.model.output.KeyOutWriter",
-              "outputFile" : "/tmp/log_flush.txt",
+              "outputFile" : "/results/log_flush.txt",
               "maxLogFileSize" : "10MB",
               "maxLogBackupFiles" : 200,
               "delimiter" : "\t",

@@ -1,0 +1,585 @@
+{
+  "servers": [
+    {
+      "port": "${port1}",
+      "host": "${url1}",
+      "alias": "kafka-node-1",
+      "queries": [
+        {
+          "outputWriters": [
+            {
+              "@class" : "com.googlecode.jmxtrans.model.output.KeyOutWriter",
+              "outputFile" : "/tmp/jvm_memory.txt",
+              "maxLogFileSize" : "10MB",
+              "maxLogBackupFiles" : 200,
+              "delimiter" : "\t",
+              "debug" : true
+            }
+          ],
+          "obj": "java.lang:type=Memory",
+          "attr": [
+            "HeapMemoryUsage",
+            "NonHeapMemoryUsage"
+          ],
+          "resultAlias": "jvmMemory"
+        },
+        {
+          "outputWriters": [
+            {
+              "@class" : "com.googlecode.jmxtrans.model.output.KeyOutWriter",
+              "outputFile" : "/tmp/os.txt",
+              "maxLogFileSize" : "10MB",
+              "maxLogBackupFiles" : 200,
+              "delimiter" : "\t",
+              "debug" : true
+            }
+          ],
+          "obj": "java.lang:type=OperatingSystem",
+          "attr": [
+            "FreePhysicalMemorySize",
+            "ProcessCpuLoad",
+            "SystemCpuLoad",
+            "SystemLoadAverage"
+          ],
+          "resultAlias": "os"
+        },
+        {
+          "outputWriters": [
+            {
+              "@class" : "com.googlecode.jmxtrans.model.output.KeyOutWriter",
+              "outputFile" : "/tmp/under_replicated_partitions.txt",
+              "maxLogFileSize" : "10MB",
+              "maxLogBackupFiles" : 200,
+              "delimiter" : "\t",
+              "debug" : true
+            }
+          ],
+          "obj": "kafka.server:type=ReplicaManager,name=UnderReplicatedPartitions",
+          "attr": [
+            "Value"
+          ],
+          "resultAlias": "UnderReplicatedPartitions"
+        },
+        {
+          "outputWriters": [
+            {
+              "@class" : "com.googlecode.jmxtrans.model.output.KeyOutWriter",
+              "outputFile" : "/tmp/messages_in_per_sec.txt",
+              "maxLogFileSize" : "10MB",
+              "maxLogBackupFiles" : 200,
+              "delimiter" : "\t",
+              "debug" : true
+            }
+          ],
+          "obj": "kafka.server:type=BrokerTopicMetrics,name=MessagesInPerSec",
+          "attr": [
+            "Count",
+            "MeanRate",
+            "OneMinuteRate",
+            "FiveMinuteRate",
+            "FifteenMinuteRate"
+          ],
+          "resultAlias": "MessagesInPerSec"
+        },
+        {
+          "outputWriters": [
+            {
+              "@class" : "com.googlecode.jmxtrans.model.output.KeyOutWriter",
+              "outputFile" : "/tmp/messages_in_per_sec_per_topic.txt",
+              "maxLogFileSize" : "10MB",
+              "maxLogBackupFiles" : 200,
+              "delimiter" : "\t",
+              "debug" : true
+            }
+          ],
+          "obj": "kafka.server:type=BrokerTopicMetrics,name=MessagesInPerSec,topic=*",
+          "attr": [
+            "Count",
+            "MeanRate",
+            "OneMinuteRate",
+            "FiveMinuteRate",
+            "FifteenMinuteRate"
+          ],
+          "resultAlias": "MessagesInPerSecPerTopic"
+        },
+        {
+          "outputWriters": [
+            {
+              "@class" : "com.googlecode.jmxtrans.model.output.KeyOutWriter",
+              "outputFile" : "/tmp/bytes_in_per_sec.txt",
+              "maxLogFileSize" : "10MB",
+              "maxLogBackupFiles" : 200,
+              "delimiter" : "\t",
+              "debug" : true
+            }
+          ],
+          "obj": "kafka.server:type=BrokerTopicMetrics,name=BytesInPerSec",
+          "attr": [
+            "Count",
+            "MeanRate",
+            "OneMinuteRate",
+            "FiveMinuteRate",
+            "FifteenMinuteRate"
+          ],
+          "resultAlias": "BytesInPerSec"
+        },
+        {
+          "outputWriters": [
+            {
+              "@class" : "com.googlecode.jmxtrans.model.output.KeyOutWriter",
+              "outputFile" : "/tmp/bytes_in_per_sec_per_topic.txt",
+              "maxLogFileSize" : "10MB",
+              "maxLogBackupFiles" : 200,
+              "delimiter" : "\t",
+              "debug" : true
+            }
+          ],
+          "obj": "kafka.server:type=BrokerTopicMetrics,name=BytesInPerSec,topic=*",
+          "attr": [
+            "Count",
+            "MeanRate",
+            "OneMinuteRate",
+            "FiveMinuteRate",
+            "FifteenMinuteRate"
+          ],
+          "resultAlias": "BytesInPerSecPerTopic"
+        },
+        {
+          "outputWriters": [
+            {
+              "@class" : "com.googlecode.jmxtrans.model.output.KeyOutWriter",
+              "outputFile" : "/tmp/bytes_out_per_sec.txt",
+              "maxLogFileSize" : "10MB",
+              "maxLogBackupFiles" : 200,
+              "delimiter" : "\t",
+              "debug" : true
+            }
+          ],
+          "obj": "kafka.server:type=BrokerTopicMetrics,name=BytesOutPerSec",
+          "attr": [
+            "Count",
+            "MeanRate",
+            "OneMinuteRate",
+            "FiveMinuteRate",
+            "FifteenMinuteRate"
+          ],
+          "resultAlias": "BytesOutPerSec"
+        },
+        {
+          "outputWriters": [
+            {
+              "@class" : "com.googlecode.jmxtrans.model.output.KeyOutWriter",
+              "outputFile" : "/tmp/bytes_out_per_sec_per_topic.txt",
+              "maxLogFileSize" : "10MB",
+              "maxLogBackupFiles" : 200,
+              "delimiter" : "\t",
+              "debug" : true
+            }
+          ],
+          "obj": "kafka.server:type=BrokerTopicMetrics,name=BytesOutPerSec,topic=*",
+          "attr": [
+            "Count",
+            "MeanRate",
+            "OneMinuteRate",
+            "FiveMinuteRate",
+            "FifteenMinuteRate"
+          ],
+          "resultAlias": "BytesOutPerSecPerTopic"
+        },
+        {
+          "outputWriters": [
+            {
+              "@class" : "com.googlecode.jmxtrans.model.output.KeyOutWriter",
+              "outputFile" : "/tmp/partition_count.txt",
+              "maxLogFileSize" : "10MB",
+              "maxLogBackupFiles" : 200,
+              "delimiter" : "\t",
+              "debug" : true
+            }
+          ],
+          "obj": "kafka.server:type=ReplicaManager,name=PartitionCount",
+          "attr": [
+            "Value"
+          ],
+          "resultAlias": "PartitionCount"
+        },
+        {
+          "outputWriters": [
+            {
+              "@class" : "com.googlecode.jmxtrans.model.output.KeyOutWriter",
+              "outputFile" : "/tmp/leader_count.txt",
+              "maxLogFileSize" : "10MB",
+              "maxLogBackupFiles" : 200,
+              "delimiter" : "\t",
+              "debug" : true
+            }
+          ],
+          "obj": "kafka.server:type=ReplicaManager,name=LeaderCount",
+          "attr": [
+            "Value"
+          ],
+          "resultAlias": "LeaderCount"
+        },
+        {
+          "outputWriters": [
+            {
+              "@class" : "com.googlecode.jmxtrans.model.output.KeyOutWriter",
+              "outputFile" : "/tmp/request_handler_avg_idle_percent.txt",
+              "maxLogFileSize" : "10MB",
+              "maxLogBackupFiles" : 200,
+              "delimiter" : "\t",
+              "debug" : true
+            }
+          ],
+          "obj": "kafka.server:type=KafkaRequestHandlerPool,name=RequestHandlerAvgIdlePercent",
+          "attr": [
+            "MeanRate"
+          ],
+          "resultAlias": "RequestHandlerAvgIdlePercent"
+        },
+        {
+          "outputWriters": [
+            {
+              "@class" : "com.googlecode.jmxtrans.model.output.KeyOutWriter",
+              "outputFile" : "/tmp/offline_partitions_count.txt",
+              "maxLogFileSize" : "10MB",
+              "maxLogBackupFiles" : 200,
+              "delimiter" : "\t",
+              "debug" : true
+            }
+          ],
+          "obj": "kafka.controller:type=KafkaController,name=OfflinePartitionsCount",
+          "attr": [
+            "Value"
+          ],
+          "resultAlias": "OfflinePartitionsCount"
+        },
+        {
+          "outputWriters": [
+            {
+              "@class" : "com.googlecode.jmxtrans.model.output.KeyOutWriter",
+              "outputFile" : "/tmp/active_controller_count.txt",
+              "maxLogFileSize" : "10MB",
+              "maxLogBackupFiles" : 200,
+              "delimiter" : "\t",
+              "debug" : true
+            }
+          ],
+          "obj": "kafka.controller:type=KafkaController,name=ActiveControllerCount",
+          "attr": [
+            "Value"
+          ],
+          "resultAlias": "ActiveControllerCount"
+        },
+        {
+          "outputWriters": [
+            {
+              "@class" : "com.googlecode.jmxtrans.model.output.KeyOutWriter",
+              "outputFile" : "/tmp/leader_election_rate_and_time_ms.txt",
+              "maxLogFileSize" : "10MB",
+              "maxLogBackupFiles" : 200,
+              "delimiter" : "\t",
+              "debug" : true
+            }
+          ],
+          "obj": "kafka.controller:type=ControllerStats,name=LeaderElectionRateAndTimeMs",
+          "attr": [
+            "Count"
+          ],
+          "resultAlias": "LeaderElectionRateAndTimeMs"
+        },
+        {
+          "outputWriters": [
+            {
+              "@class" : "com.googlecode.jmxtrans.model.output.KeyOutWriter",
+              "outputFile" : "/tmp/unclean_leader_elections_per_sec.txt",
+              "maxLogFileSize" : "10MB",
+              "maxLogBackupFiles" : 200,
+              "delimiter" : "\t",
+              "debug" : true
+            }
+          ],
+          "obj": "kafka.controller:type=ControllerStats,name=UncleanLeaderElectionsPerSec",
+          "attr": [
+            "Count"
+          ],
+          "resultAlias": "UncleanLeaderElectionsPerSec"
+        },
+        {
+          "outputWriters": [
+            {
+              "@class" : "com.googlecode.jmxtrans.model.output.KeyOutWriter",
+              "outputFile" : "/tmp/produce_requests_per_sec.txt",
+              "maxLogFileSize" : "10MB",
+              "maxLogBackupFiles" : 200,
+              "delimiter" : "\t",
+              "debug" : true
+            }
+          ],
+          "obj": "kafka.network:type=RequestMetrics,name=RequestsPerSec,request=Produce",
+          "attr": [
+            "Count",
+            "MeanRate",
+            "OneMinuteRate",
+            "FiveMinuteRate",
+            "FifteenMinuteRate"
+          ],
+          "resultAlias": "ProduceRequestsPerSec"
+        },
+        {
+          "outputWriters": [
+            {
+              "@class" : "com.googlecode.jmxtrans.model.output.KeyOutWriter",
+              "outputFile" : "/tmp/fetch_consumer_requests_per_sec.txt",
+              "maxLogFileSize" : "10MB",
+              "maxLogBackupFiles" : 200,
+              "delimiter" : "\t",
+              "debug" : true
+            }
+          ],
+          "obj": "kafka.network:type=RequestMetrics,name=RequestsPerSec,request=FetchConsumer",
+          "attr": [
+            "Count",
+            "MeanRate",
+            "OneMinuteRate",
+            "FiveMinuteRate",
+            "FifteenMinuteRate"
+          ],
+          "resultAlias": "FetchConsumerRequestsPerSec"
+        },
+        {
+          "outputWriters": [
+            {
+              "@class" : "com.googlecode.jmxtrans.model.output.KeyOutWriter",
+              "outputFile" : "/tmp/fetch_follower_requests_per_sec.txt",
+              "maxLogFileSize" : "10MB",
+              "maxLogBackupFiles" : 200,
+              "delimiter" : "\t",
+              "debug" : true
+            }
+          ],
+          "obj": "kafka.network:type=RequestMetrics,name=RequestsPerSec,request=FetchFollower",
+          "attr": [
+            "Count",
+            "MeanRate",
+            "OneMinuteRate",
+            "FiveMinuteRate",
+            "FifteenMinuteRate"
+          ],
+          "resultAlias": "FetchFollowerRequestsPerSec"
+        },
+        {
+          "outputWriters": [
+            {
+              "@class" : "com.googlecode.jmxtrans.model.output.KeyOutWriter",
+              "outputFile" : "/tmp/produce_total_time_ms.txt",
+              "maxLogFileSize" : "10MB",
+              "maxLogBackupFiles" : 200,
+              "delimiter" : "\t",
+              "debug" : true
+            }
+          ],
+          "obj": "kafka.network:type=RequestMetrics,name=TotalTimeMs,request=Produce",
+          "attr": [
+            "Count",
+            "Min",
+            "Max",
+            "Mean",
+            "StdDev",
+            "50thPercentile",
+            "75thPercentile",
+            "95thPercentile",
+            "98thPercentile",
+            "99thPercentile",
+            "999thPercentile"
+          ],
+          "resultAlias": "ProduceTotalTimeMs"
+        },
+        {
+          "outputWriters": [
+            {
+              "@class" : "com.googlecode.jmxtrans.model.output.KeyOutWriter",
+              "outputFile" : "/tmp/fetch_consumer_total_time_ms.txt",
+              "maxLogFileSize" : "10MB",
+              "maxLogBackupFiles" : 200,
+              "delimiter" : "\t",
+              "debug" : true
+            }
+          ],
+          "obj": "kafka.network:type=RequestMetrics,name=TotalTimeMs,request=FetchConsumer",
+          "attr": [
+            "Count",
+            "Min",
+            "Max",
+            "Mean",
+            "StdDev",
+            "50thPercentile",
+            "75thPercentile",
+            "95thPercentile",
+            "98thPercentile",
+            "99thPercentile",
+            "999thPercentile"
+          ],
+          "resultAlias": "FetchConsumerTotalTimeMs"
+        },
+        {
+          "outputWriters": [
+            {
+              "@class" : "com.googlecode.jmxtrans.model.output.KeyOutWriter",
+              "outputFile" : "/tmp/fetch_follower_total_time_ms.txt",
+              "maxLogFileSize" : "10MB",
+              "maxLogBackupFiles" : 200,
+              "delimiter" : "\t",
+              "debug" : true
+            }
+          ],
+          "obj": "kafka.network:type=RequestMetrics,name=TotalTimeMs,request=FetchFollower",
+          "attr": [
+            "Count",
+            "Min",
+            "Max",
+            "Mean",
+            "StdDev",
+            "50thPercentile",
+            "75thPercentile",
+            "95thPercentile",
+            "98thPercentile",
+            "99thPercentile",
+            "999thPercentile"
+          ],
+          "resultAlias": "FetchFollowerTotalTimeMs"
+        },
+        {
+          "outputWriters": [
+            {
+              "@class" : "com.googlecode.jmxtrans.model.output.KeyOutWriter",
+              "outputFile" : "/tmp/fetch_follower_request_queue_time_ms.txt",
+              "maxLogFileSize" : "10MB",
+              "maxLogBackupFiles" : 200,
+              "delimiter" : "\t",
+              "debug" : true
+            }
+          ],
+          "obj": "kafka.network:type=RequestMetrics,name=RequestQueueTimeMs,request=FetchFollower",
+          "attr": [
+            "Count",
+            "Min",
+            "Max",
+            "Mean",
+            "StdDev",
+            "50thPercentile",
+            "75thPercentile",
+            "95thPercentile",
+            "98thPercentile",
+            "99thPercentile",
+            "999thPercentile"
+          ],
+          "resultAlias": "FetchFollowerRequestQueueTimeMs"
+        },
+        {
+          "outputWriters": [
+            {
+              "@class" : "com.googlecode.jmxtrans.model.output.KeyOutWriter",
+              "outputFile" : "/tmp/fetch_consumer_request_queue_time_ms.txt",
+              "maxLogFileSize" : "10MB",
+              "maxLogBackupFiles" : 200,
+              "delimiter" : "\t",
+              "debug" : true
+            }
+          ],
+          "obj": "kafka.network:type=RequestMetrics,name=RequestQueueTimeMs,request=FetchConsumer",
+          "attr": [
+            "Count",
+            "Min",
+            "Max",
+            "Mean",
+            "StdDev",
+            "50thPercentile",
+            "75thPercentile",
+            "95thPercentile",
+            "98thPercentile",
+            "99thPercentile",
+            "999thPercentile"
+          ],
+          "resultAlias": "FetchConsumerRequestQueueTimeMs"
+        },
+        {
+          "outputWriters": [
+            {
+              "@class" : "com.googlecode.jmxtrans.model.output.KeyOutWriter",
+              "outputFile" : "/tmp/produce_request_queue_time_ms.txt",
+              "maxLogFileSize" : "10MB",
+              "maxLogBackupFiles" : 200,
+              "delimiter" : "\t",
+              "debug" : true
+            }
+          ],
+          "obj": "kafka.network:type=RequestMetrics,name=RequestQueueTimeMs,request=Produce",
+          "attr": [
+            "Count",
+            "Min",
+            "Max",
+            "Mean",
+            "StdDev",
+            "50thPercentile",
+            "75thPercentile",
+            "95thPercentile",
+            "98thPercentile",
+            "99thPercentile",
+            "999thPercentile"
+          ],
+          "resultAlias": "ProduceRequestQueueTimeMs"
+        },
+        {
+          "outputWriters": [
+            {
+              "@class" : "com.googlecode.jmxtrans.model.output.KeyOutWriter",
+              "outputFile" : "/tmp/network_processor_avg_idle_percent.txt",
+              "maxLogFileSize" : "10MB",
+              "maxLogBackupFiles" : 200,
+              "delimiter" : "\t",
+              "debug" : true
+            }
+          ],
+          "obj": "kafka.network:type=SocketServer,name=NetworkProcessorAvgIdlePercent",
+          "attr": [
+            "Value"
+          ],
+          "resultAlias": "NetworkProcessorAvgIdlePercent "
+        },
+        {
+          "outputWriters": [
+            {
+              "@class" : "com.googlecode.jmxtrans.model.output.KeyOutWriter",
+              "outputFile" : "/tmp/log_flush.txt",
+              "maxLogFileSize" : "10MB",
+              "maxLogBackupFiles" : 200,
+              "delimiter" : "\t",
+              "debug" : true
+            }
+          ],
+          "obj": "kafka.log:type=LogFlushStats,name=LogFlushRateAndTimeMs",
+          "attr": [
+            "MeanRate",
+            "OneMinuteRate",
+            "FiveMinuteRate",
+            "FifteenMinuteRate",
+            "50thPercentile",
+            "Min",
+            "Mean",
+            "StdDev",
+            "75thPercentile",
+            "95thPercentile",
+            "98thPercentile",
+            "99thPercentile",
+            "999thPercentile",
+            "Count",
+            "Max"
+          ],
+          "resultAlias": "LogFlush"
+        }
+      ],
+      "numQueryThreads": 2
+    }
+  ]
+}
